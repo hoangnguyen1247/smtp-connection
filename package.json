@@ -21,6 +21,7 @@
         "chai-as-promised": "^7.1.1",
         "cross-env": "^7.0.2",
         "gts": "^2.0.2",
+        "husky": "^4.2.5",
         "mocha": "^8.1.2",
         "prettier": "^2.1.1",
         "proxy": "^1.0.2",
@@ -38,16 +39,18 @@
         "build": "npm run clean:build && npm run type-check && npm run build:js",
         "build:types": "tsc --emitDeclarationOnly",
         "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --ignore '**/*.test.ts' --source-maps false",
-        "build:js2": "babel src --out-dir lib --extensions \".ts,.tsx\" --ignore '**/*.test.ts' --source-maps false --presets minify",
+        "build:js:minify": "babel src --out-dir lib --extensions \".ts,.tsx\" --ignore '**/*.test.ts' --source-maps false --presets minify",
         "build:js:sourcemap": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
         "eslint": "node_modules/.bin/eslint src/** --fix",
         "test:mocha": "cross-env NODE_PATH=. ts-mocha test/test.ts --timeout=60000 --exit",
         "test": "npm run type-check && npm run test:mocha"
     },
-    "prettier": {
-        "singleQuote": true
-    },
     "engines": {
         "node": ">=10"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run type-check"
+        }
     }
 }
