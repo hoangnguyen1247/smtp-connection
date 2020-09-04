@@ -100,7 +100,7 @@ class SMTPConnection extends EventEmitter {
     _onSocketEnd: () => void;
     _onSocketTimeout: () => void;
 
-    constructor(options) {
+    constructor(options?) {
         super();
 
         this.id = crypto.randomBytes(8).toString('base64').replace(/\W/g, '');
