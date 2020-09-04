@@ -136,4 +136,4 @@ function httpProxyClient(proxyUrl, destinationPort, destinationHost, callback) {
     socket.once('error', tempSocketErr);
 }
 
-module.exports = httpProxyClient;
+export default httpProxyClient;

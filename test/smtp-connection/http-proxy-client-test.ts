@@ -6,7 +6,7 @@ import proxy from 'proxy';
 import chai from 'chai';
 import { SMTPServer } from 'smtp-server';
 
-import httpProxyClient from '../../lib/smtp-connection/http-proxy-client';
+import httpProxyClient from '../../src/smtp-connection/http-proxy-client';
 
 const expect = chai.expect;
 
