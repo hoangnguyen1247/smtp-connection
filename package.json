@@ -1,5 +1,5 @@
 {
-    "name": "quickstart-lib-ts",
+    "name": "smtp-connection",
     "version": "0.0.1",
     "description": "Quickstart lib ts",
     "main": "index.js",
